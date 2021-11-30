@@ -14,7 +14,7 @@ def lambda_handler(event, context):
             print('Bucket exists')
         else:
             return {
-                'statusCode' : 400,
+                'statusCode' : 404,
                 'body' : "Bucket doesn't exist"
             }
     obj = bucket.Object(key)
