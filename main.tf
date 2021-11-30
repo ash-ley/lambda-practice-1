@@ -68,6 +68,6 @@ resource "aws_lambda_function" "my_lambda_function" {
   filename = data.archive_file.lambda_file.output_path
   function_name = "lambda_pets"
   role = aws_iam_role.lambda_role.arn
-  handler = "boto3.py"
+  handler = "boto3.lambda_handler"
   runtime = "python3.9"
 }
