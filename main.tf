@@ -41,8 +41,15 @@ resource "aws_iam_policy" "my_policy" {
           {
             "Action" : [
                 "s3:GetObject",
-                "s3:List*",
                 "s3:PutObject"
+            ],
+            "Effect" : "Allow",
+            "Sid" : "S3ObjectActions",
+            "Resource" : ["arn:aws:s3:::talent-academy-439272626435-tfstate-ashley/*"]
+            },
+            {
+            "Action" : [
+                "s3:List*"
             ],
             "Effect" : "Allow",
             "Sid" : "S3ObjectActions",
